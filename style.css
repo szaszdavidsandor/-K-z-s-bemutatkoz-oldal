@@ -1,12 +1,192 @@
+/* ===========================
+   ALAP
+=========================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --ink:       #1a1a2e;
+    --paper:     #f5f3ee;
+    --accent:    #7c5cbb;
+    --accent-lt: #ede8f7;
+    --muted:     #6b6b7b;
+    --card-bg:   #ffffff;
+    --border:    #e0ddd7;
+}
+
 body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 40px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 300;
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+    background-color: var(--ink);
+    color: #fff;
+    padding: 80px 40px 72px;
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+}
+
+.hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+}
+
+.hero-name {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.hero-tagline {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #a9a9be;
+    letter-spacing: 0.05em;
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+
+main {
+    max-width: 700px;
+    margin: 56px auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    position: relative;
+}
+
+.card-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background-color: var(--accent-lt);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.card p {
+    font-size: 0.97rem;
+    color: #3a3a50;
+}
+
+/* ===========================
+   KEDVENC ELEM
+=========================== */
+
+.fav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fav-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.fav-desc {
+    font-size: 0.95rem;
+    color: #4a4a60;
+}
+
+/* ===========================
+   HOBBY LISTA
+=========================== */
+
+.hobby-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hobby-list li {
+    font-size: 0.95rem;
+    color: #3a3a50;
+    padding-left: 18px;
+    position: relative;
+}
+
+.hobby-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    top: 2px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+
+/* ===========================
+   RESZPONZÍV
+=========================== */
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 56px 24px 48px;
     }
 
-section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    .card {
+        padding: 22px 20px;
+    }
+
+    main {
+        margin: 36px auto;
+    }
 }
